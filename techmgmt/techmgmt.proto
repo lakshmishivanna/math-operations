@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "example.com/go-techmgmt-grpc;go_techmgmt_grpc";
+
+package techmgmt;
+
+service TechMangement{
+    rpc AddNmbers (numbers) returns (SumOfIntegers) {}
+}
+
+message numbers {
+    uint32 number1 = 1;
+    uint32 number2 = 2;
+}
+
+message SumOfIntegers {
+    string Hashsum = 1;
+    string errorResponse = 2;
+    int32 errCode = 3;
+}
